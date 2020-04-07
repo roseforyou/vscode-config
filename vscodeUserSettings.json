@@ -1,4 +1,5 @@
 {
+  "editor.formatOnSave": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -17,38 +18,42 @@
   "editor.renderIndentGuides": true,
   "editor.renderWhitespace": "all",
   "editor.tabSize": 2,
-  "eslint.autoFixOnSave": true,
+  "eslint.format.enable": true,
   "eslint.validate": [
+    "typescript", 
+    "typescriptreact",
     "javascript",
     "javascriptreact",
     "html",
-    {
-      "autoFix": true,
-      "language": "html"
-    },
-    {
-      "autoFix": true,
-      "language": "vue"
-    }
+    "vue"
   ],
-  "editor.formatOnSave": true,
   "files.autoGuessEncoding": true,
   "files.defaultLanguage": "javascript",
   "git.autofetch": true,
   "javascript.format.enable": false,
   "php.validate.executablePath": "C:/xampp/php/php.exe",
-  // "prettier": {
-  //   "arrowParens": "avoid",
-  //   "eslintIntegration": true,
-  //   "printWidth": 120,
-  //   "proseWrap": "preserve",
-  //   "singleQuote": true,
-  //   "jsxBracketSameLine": false,
-  //   "semi": true,
-  //   "requirePragma": false,
-  //   "trailingComma": "none",
-  // },
-  "search.location": "sidebar",
+  /*  prettier的配置 */
+  "prettier.printWidth": 100, // 超过最大值换行
+  "prettier.tabWidth": 2, // 缩进字节数
+  "prettier.useTabs": false, // 缩进不使用tab，使用空格
+  "prettier.semi": true, // 句尾添加分号
+  "prettier.singleQuote": true, // 使用单引号代替双引号
+  "prettier.proseWrap": "preserve", // 默认值。因为使用了一些折行敏感型的渲染器（如GitHub comment）而按照markdown文本样式进行折行
+  "prettier.arrowParens": "avoid", //  (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号
+  "prettier.bracketSpacing": true, // 在对象，数组括号与文字之间加空格 "{ foo: bar }"
+  "prettier.disableLanguages": [
+    "vue"
+  ], // 不格式化vue文件，vue文件的格式化单独设置
+  "prettier.endOfLine": "auto", // 结尾是 \n \r \n\r auto
+  // "prettier.eslintIntegration": false, //不让prettier使用eslint的代码格式进行校验
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.ignorePath": ".prettierignore", // 不使用prettier格式化的文件填写在项目的.prettierignore文件中
+  "prettier.jsxBracketSameLine": false, // 在jsx中把'>' 是否单独放一行
+  "prettier.jsxSingleQuote": false, // 在jsx中使用单引号代替双引号
+  // "prettier.parser": "babylon", // 格式化的解析器，默认是babylon
+  "prettier.requireConfig": false, // Require a 'prettierconfig' to format prettier
+  // "prettier.stylelintIntegration": false, //不让prettier使用stylelint的代码格式进行校验
+  "prettier.trailingComma": "es5", //尾逗号 (none  - 无尾逗号,  es5 - 添加es5中被支持的尾逗号, all  - 所有可能的地方都被添加尾逗号)
   "sync.autoDownload": true,
   "sync.autoUpload": true,
   "sync.gist": "1256c048d42ffa053e13a35caea8d1dc",
@@ -57,11 +62,54 @@
   "vsicons.dontShowNewVersionMessage": true,
   "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "FlatUI Dark",
   "workbench.startupEditor": "newUntitledFile",
   // "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
   "workbench.statusBar.feedback.visible": false,
   "workbench.statusBar.visible": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "typescript.locale": "zh-CN"
+  "typescript.locale": "en",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.autoSave": "off",
+  // "workbench.iconTheme": "FlatUI Dark",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  // csscomb为css排序
+  // csscomb 保存时,为css排序
+  "csscomb.formatOnSave": true,
+  // "csscomb.preset": "zen",
+  // 使用自定义排序风格, 官方推荐的三个: csscomb、yandex、zen
+  "csscomb.preset": {
+    "remove-empty-rulesets": true,
+    "always-semicolon": true,
+    "block-indent": "  ",
+    "color-shorthand": true,
+    "element-case": "lower",
+    "eof-newline": true,
+    "leading-zero": false,
+    "quotes": "double",
+    "sort-order-fallback": "abc",
+    "space-before-colon": "",
+    "space-after-colon": " ",
+    "space-before-combinator": " ",
+    "space-after-combinator": " ",
+    "space-between-declarations": "\n",
+    "space-before-opening-brace": " ",
+    "space-after-opening-brace": "\n",
+    "space-after-selector-delimiter": " ",
+    "space-before-selector-delimiter": "",
+    "space-before-closing-brace": "\n",
+    "strip-spaces": true,
+    "tab-size": true,
+    "unitless-zero": true,
+    "vendor-prefix-align": true
+  },
+  "editor.columnSelection": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.renderControlCharacters": false
 }
